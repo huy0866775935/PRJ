@@ -4,17 +4,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
 <html>
-    <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>LOGIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
-        <form action="login" method="POST">
-            Username: <input type="text" name="username"/> <br/>
-            Password: <input type="password" name="password" /> <br/>
-            <input type="checkbox" name="remember" value="remember"/> Remember in this computer.
-            <input type="submit" value="Login"/>
-        </form>
+    <body>      
+        <div class="login">
+            <h2>Sign In</h2>
+            <form action="checkLogin" method="POST">            
+                <div class="box">
+                    <input type="text" placeholder="Username"><!-- comment -->                                               
+                </div>               
+                <div class="box">
+                    <input type="password" name='password' placeholder="Password"><!-- comment -->                                               
+                </div>
+                <div class="submit">                
+                    <input type="submit" name='button_login' value="Login"/><!-- comment -->              
+                </div>
+            </form>  
+            <div class='query'>
+                <p>Forgot <a href="#">Password</a>?</p>
+                <p>Create an <a href="#">Account</a>!</p>
+            </div>                       
+        </div>
+        
+        
+                 
+            
     </body>
+    
 </html>
