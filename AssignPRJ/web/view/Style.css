@@ -7,3 +7,110 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : huy08
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      font-family: 'Poppins',sans-serif
+  }
+  
+  body{
+      position: relative;
+      width: 100%;
+      min-height: 150vh;
+  }
+  
+  nav{
+      position: fixed;
+      width: 250px;
+      height: 100%;
+      background: #f1f1f1;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid black;
+      z-index: 1000;
+  }
+  
+  
+  nav ul {
+      width: 100%;
+      list-style: none;
+      overflow: hidden;
+  }
+  
+  
+  nav ul li a{
+      width: 100%;
+      color: #1e90ff;
+      text-decoration: none;
+      font-size: 1.2em;
+      display: inline-flex;
+      align-items: center;
+      padding: 15px;
+      transition: linear 0.5s;
+  }
+  
+  nav ul li a ion-icon{
+      margin: 0 20px;
+      color: #1e90ff;
+      font-size: 1.2em;
+      transition: linear 0.2s;
+  }
+  
+  nav ul li a:hover{
+      background: #1e90ff;
+      color: white;
+  }
+  
+  nav ul li a:hover ion-icon{      
+      color: white;
+  }
+  
+  .content{
+      position: absolute;
+      top:0;
+      left:250px;
+      width: calc(100% - 250px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transition: ease-in-out 0.5s;
+  }
+  
+  .content h2{
+      font-size: 4.5em;
+      color: #003cff;
+      text-transform: uppercase;
+  }
+  
+  nav .menu{
+      position: absolute;
+      top: 20px;
+      right:-46px;
+      width:45px;
+      height:45px;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      background: #f1f1f1;
+      border-radius:0px 10px 10px 0px;
+      cursor:pointer;
+      transition: linear 0.2s;
+  }
+  
+  nav .menu ion-icon{
+      color: #1e90ff;
+      font-size: 1.5em;
+      transition: linear 0.2s;     
+  }
+  
+  nav .menu:hover{
+      background: #1e90ff;
+  }
+  
+  nav .menu:hover ion-icon{
+      color:white;
+  }

@@ -8,28 +8,49 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <title>Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <nav>
             <ul>
+                <div class="menu"><ion-icon name="menu"></ion-icon></div>
+                     
                 <li>
-                    <a href="">Home</a>
+                    <a href=""><ion-icon name="home"></ion-icon>Home</a>                   
                 </li>
+                
                 <li>
-                    <a href="">Timetable</a>
+                    <a href=""><ion-icon name="browsers"></ion-icon>Timetable</a>
                 </li>
+                
                 <li>
-                    <a href="">Attendent</a>
+                    <a href=""><ion-icon name="checkbox-outline"></ion-icon>Attendent</a>
                 </li>
+                
                 <li>
-                    <a href="">Log-out</a>
+                    <a href=""><ion-icon name="log-out"></ion-icon>Log-out</a>
                 </li>
                 
                 
             </ul>
         </nav>
+        <section class="content">
+            <h2>Content</h2>
+        </section>
     </body>
+    
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        const nav = document.querySelector('nav');
+        const menu = document.querySelector('.menu');
+        const content = document.querySelector('.content');
+        
+        menu.onclick() = funtion(){
+            nav.classList.toggle('hide');
+            content.classList.toggle('expand');
+        }
+    </script>
+
 
         
     
