@@ -19,7 +19,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   body{
       position: relative;
       width: 100%;
-      min-height: 150vh;
+      height: 100%;
+      
   }
   
   nav{
@@ -32,6 +33,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
       border-right: 1px solid black;
       z-index: 1000;
   }
+  nav.hide{
+      width: 0;
+  }
+  
+  
   
   
   nav ul {
@@ -73,20 +79,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
       top:0;
       left:250px;
       width: calc(100% - 250px);
+      
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
       transition: ease-in-out 0.5s;
   }
-  
+  .content.expand{
+      width: 100%;
+      left:0;
+  }
   .content h2{
       font-size: 4.5em;
       color: #003cff;
       text-transform: uppercase;
   }
   
-  nav .menu{
+  nav .toggle_menu{
       position: absolute;
       top: 20px;
       right:-46px;
@@ -101,16 +111,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
       transition: linear 0.2s;
   }
   
-  nav .menu ion-icon{
+  nav .toggle_menu ion-icon{
       color: #1e90ff;
       font-size: 1.5em;
       transition: linear 0.2s;     
   }
   
-  nav .menu:hover{
+  nav .toggle_menu:hover{
       background: #1e90ff;
   }
   
-  nav .menu:hover ion-icon{
+  nav .toggle_menu:hover ion-icon{
       color:white;
   }
+  
+  .content .tab{
+      display: none;
+  }
+  
+  button{
+      border: none;
+      background: #f1f1f1;
+      width: 100%;
+  }
+  
+  .timetable.selected{
+      background-color: yellowgreen;
+  }
+  
+  button.button_1{
+      background-color: yellowgreen;
+  }
+  
