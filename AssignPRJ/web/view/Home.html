@@ -17,10 +17,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <ul>
                 <div class="toggle_menu"><ion-icon name="menu"></ion-icon></div>
                      
-                <li class="home">
-                    <button onclick="myFunction()" id="button_home">
-                    <a href=""><ion-icon name="home"></ion-icon>Home</a>   
-                    </button>
+                <li class="home" onclick="myFunction">
+                   
+                        <a href=""><ion-icon name="home"></ion-icon>Home</a>   
+                    
                 </li>
                 
                 <li class="timetable">
@@ -29,7 +29,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     
                 </li>
                 
-                <li class="Attendent">
+                <li class="attendent">
                     <a href=""><ion-icon name="checkbox-outline"></ion-icon>Attendent</a>
                 </li>
                 
@@ -39,11 +39,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                
             </ul>
         </nav>
-        <section class="content" >           
-                <h2>Content 1</h2>           
+        <section class="content_home" id="content_home">
+            
+                <h2>Content 1</h2> 
+            
+        </section>
+        
+        <section class="content_timetable" id="content_timetable">
+            
+                <h2>Content 2</h2>           
+        </section>
+        
+        <section class="content_attend" id="content_attend">
+            
+                <h2>Content 3</h2>           
         </section>
         
         
+        <section class="content_logout" id="content_logout">
+            
+                <h2>Content 4</h2>           
+        </section>
     </body>
     
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
@@ -51,20 +67,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         const nav = document.querySelector('nav');
         const toggle_menu = document.querySelector('.toggle_menu');
         const content = document.querySelector('.content');
-        const home = document.querySelector('.home');
+        const home = document.querySelector('home');
         const timetable = document.querySelector('.timetable');
+        
+        const content_home = document.querySelector('.content_home');
+        const content_timetable = document.querySelector('.content_timetable');
+        const content_attend = document.getElementsByName('content_attend');
+        
+        const content_logout = document.querySelector('.content_logout');
+        
         const li = document.querySelector('li');
-        document.get
+        const section = document.querySelector('section');
+        
+        
+        
+        function myFunction(){
+            document.getElementsByClassName(home).classList.toggle("button_selected");
+        };
+        
         toggle_menu.onclick = function(){
             nav.classList.toggle('hide');
-            content.classList.toggle('expand');
+            content_home.classList.toggle('expand');
+            content_attend.classList.toggle('expand');
+            
         };
         
         timetable.onclick= function() {
             li.classList.toggle('not_selected');                   
         };
         
-        
+       
         
     </script>
 

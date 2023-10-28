@@ -74,23 +74,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
       color: white;
   }
   
-  .content{
+  section{
       position: absolute;
       top:0;
       left:250px;
-      width: calc(100% - 250px);
-      
+      width: calc(100% - 250px);      
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
       transition: ease-in-out 0.5s;
   }
-  .content.expand{
+  
+  section.expand{
       width: 100%;
       left:0;
   }
-  .content h2{
+  section h2{
       font-size: 4.5em;
       color: #003cff;
       text-transform: uppercase;
@@ -139,7 +139,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
       background-color: yellowgreen;
   }
   
-  button.button_1{
+  .home.button_selected{
       background-color: yellowgreen;
+  }
+  
+  
+   .content_home{
+      z-index: 10;
+      background-color:red;
+      
+  }
+  
+  .content_attend{
+     background-color:blue;
   }
   
