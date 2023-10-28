@@ -3,23 +3,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller.student;
+package controller.instructor;
 
-import dal.StudentDBContext;
+import dal.assignment.SessionDBContext;
+import dal.assignment.TimeSlotDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.Date;
+import java.text.ParseException;
 import java.util.ArrayList;
-import model.Student;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.assingment.Session;
+import model.assingment.TimeSlot;
+import util.DateUtils;
+import static util.DateUtils.getSQLDatesBetween;
 
 /**
  *
  * @author sonnt
  */
-public class List extends HttpServlet {
+public class TimeTable extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -30,10 +38,39 @@ public class List extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        StudentDBContext db = new StudentDBContext();
-        ArrayList<Student> students = db.list();
-        request.setAttribute("students", students);
-        request.getRequestDispatcher("../view/student/list.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        int id = Integer.parseInt(request.getParameter("id"));
+        String s_from = request.getParameter("from");
+        String s_to = request.getParameter("to");
+        ArrayList<Date> dates = new ArrayList<>();
+        if(s_from ==null)// this week
+        {
+            dates = (ArrayList<Date>) DateUtils.getDatesOfCurrentWeek();
+        }
+        else
+        {
+            try {
+                dates = (ArrayList<Date>) getSQLDatesBetween(s_from,s_to);
+            } catch (ParseException ex) {
+                Logger.getLogger(TimeTable.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        Date from = dates.get(0);
+        Date to = dates.get(dates.size()-1);
+        
+        TimeSlotDBContext timeDB = new TimeSlotDBContext();
+        ArrayList<TimeSlot> slots = timeDB.list();
+        
+        SessionDBContext sesDB = new SessionDBContext();
+        ArrayList<Session> sessions = sesDB.getSessions(id, from, to);
+        
+        request.setAttribute("slots", slots);
+        request.setAttribute("dates", dates);
+        request.setAttribute("from", from);
+        request.setAttribute("to", to);
+        request.setAttribute("sessions", sessions);
+        
+        request.getRequestDispatcher("../view/instructor/timetable.jsp").forward(request, response);
         
     } 
 

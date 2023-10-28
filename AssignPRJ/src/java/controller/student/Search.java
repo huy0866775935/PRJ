@@ -5,16 +5,21 @@
 
 package controller.student;
 
+import dal.DepartmentDBContext;
+import dal.StudentDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import model.Department;
+import model.Student;
 
 /**
  *
- * @author huy08
+ * @author sonnt
  */
 public class Search extends HttpServlet {
    
@@ -27,19 +32,20 @@ public class Search extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Search</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Search at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        String did_raw = request.getParameter("did");
+        //validation
+        did_raw = (did_raw == null || did_raw.length() ==0)?"0":did_raw;
+        int did = Integer.parseInt(did_raw);
+        
+        DepartmentDBContext db = new DepartmentDBContext();
+        ArrayList<Department> depts = db.list();
+        request.setAttribute("depts", depts);
+        
+        StudentDBContext stuDB = new StudentDBContext();
+        ArrayList<Student> students = stuDB.searchByDeptId(did);
+        request.setAttribute("students", students);
+        
+        request.getRequestDispatcher("../view/student/search.jsp").forward(request, response);
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -79,3 +85,4 @@ public class Search extends HttpServlet {
     }// </editor-fold>
 
 }
+

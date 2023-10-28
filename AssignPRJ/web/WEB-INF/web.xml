@@ -24,6 +24,14 @@
         <servlet-name>Search</servlet-name>
         <servlet-class>controller.student.Search</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AttendenceTaking</servlet-name>
+        <servlet-class>controller.instructor.AttendenceTaking</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TimeTable</servlet-name>
+        <servlet-class>controller.instructor.TimeTable</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>BasedRequiredAuthenticationController</servlet-name>
         <url-pattern>/BRAC</url-pattern>
@@ -71,6 +79,14 @@
     <servlet-mapping>
         <servlet-name>Search</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AttendenceTaking</servlet-name>
+        <url-pattern>/AttendenceTaking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TimeTable</servlet-name>
+        <url-pattern>/TimeTable</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
