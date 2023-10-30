@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>LOGIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+  *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      font-family: 'Poppins',sans-serif
+  }
+  
+  body{
+      width: 100%;
+      min-height: 100vh;
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+      background: linear-gradient(45deg,white,blue);
+  }
+  
+  .login{
+      background: white;
+      box-shadow: 5px 5px 25px rgba(0,0,0,0.2);
+      padding: 40px 40px;
+      text-align: center;
+      border-radius: 30px;
+  }
+  
+  .login h2{
+      text-align: center;
+      font-size: 3em;
+      letter-spacing: 2px;
+      font-weight: bold;
+      color: #003cff;
+      margin-bottom: 30px;
+      text-shadow:2px 2px rgba(0,0,0,0.2);
+  }
+  
+  .login form .box{
+      position: relative;
+      margin-bottom: 10px;
+  }
+  
+  
+  .box input {
+      position: relative;
+      width: 300px;
+      height: 50px;
+      text-indent: 10px;
+      border: 2px solid rgba(0,0,0,0.2);
+      border-radius: 10px;
+      outline: none;
+      font-size: 1.1em;
+      
+  }
+  
+  input:focus{
+      border-color: #003cff;
+      text-indent: 20px;
+  }
+  
+  .submit input{
+      display: inline-block;
+      padding: 10px 45px;
+      margin-top: 20px;
+      color: #003cff;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      cursor:pointer;
+  }
+  
+  .submit input:hover{
+      background-color: #003cff;
+      color: white;
+      box-shadow: none;
+  }
+  
+  .login .query{
+      margin: 20px 0;
+  }
+  
+  .login .query p a{
+      text-decoration: none;
+      color:#003cff;
+      transition: linear 0.2s;
+  }
+  
+  .login .query p a:hover{
+      text-decoration: underline;
+      font-weight: 700;
+  }
+  
+        </style>
+        
+        
+        
+    </head>
+    <body>      
+        <div class="login">
+            <h2>Sign In</h2>
+            <form action="login" method="POST">            
+                <div class="box">
+                    <input type="text" placeholder="Username"><!-- comment -->                                               
+                </div>               
+                <div class="box">
+                    <input type="password" name='password' placeholder="Password"><!-- comment -->                                               
+                </div>
+                <div class="submit">                
+                    <input type="submit" name='button_login' value="Login"/><!-- comment -->              
+                </div>
+            </form>  
+            <div class='query'>
+                <p>Forgot <a href="#">Password</a>?</p>
+                <p>Create an <a href="#">Account</a>!</p>
+            </div>                       
+        </div>
+        
+        
+                 
+            
+    </body>
+    
+</html>

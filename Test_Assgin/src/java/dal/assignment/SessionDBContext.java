@@ -31,9 +31,9 @@ public class SessionDBContext extends DBContext<Session> {
             String sql = "SELECT  \n"
                     + "	ses.sesid,ses.[date],ses.[index],ses.isAtt,r.roomid,sub.subid,sub.subname,g.gid,g.gname,t.tid,t.[description]\n"
                     + "FROM [Session] ses INNER JOIN [Group] g ON ses.gid = g.gid\n"
-                    + "	INNER JOIN [Subject] sub ON g.subid = sub.subid\n"
-                    + "	INNER JOIN Room r ON r.roomid = ses.rid\n"
-                    + "	INNER JOIN TimeSlot t ON ses.tid = t.tid\n"
+                    + "							INNER JOIN [Subject] sub ON g.subid = sub.subid\n"
+                    + "							INNER JOIN Room r ON r.roomid = ses.rid\n"
+                    + "							INNER JOIN TimeSlot t ON ses.tid = t.tid\n"
                     + "WHERE ses.iid = ? AND ses.[date] >= ? AND ses.[date] <= ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, iid);

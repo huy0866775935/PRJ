@@ -19,7 +19,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import model.Department;
 import model.Role;
-import model.assingment.Student;
+import model.Student;
 import model.User;
 
 /**
