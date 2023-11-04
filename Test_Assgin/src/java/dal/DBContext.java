@@ -21,7 +21,7 @@ public abstract class DBContext<T extends IBaseModel> {
     public DBContext()
     {
         try {
-            String url = "jdbc:sqlserver://localhost:1433;databaseName=user";
+            String url = "jdbc:sqlserver://localhost:1433;databaseName=PRJ301_FALL2023_Afternoon";
             String user = "sa";
             String pass = "123";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

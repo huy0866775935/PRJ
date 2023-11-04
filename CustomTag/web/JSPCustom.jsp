@@ -1,9 +1,9 @@
 <%-- 
-    Document   : newjsp
-    Created on : Oct 28, 2023, 10:27:11 PM
+    Document   : JSPCustom
+    Created on : Nov 4, 2023, 12:00:34 AM
     Author     : huy08
 --%>
-
+<%@taglib prefix="my" uri="/WEB-INF/tlds/myCustomTag.tld"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <my:VNDate value="now"></my:VNDate>
     </body>
 </html>

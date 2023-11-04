@@ -3,10 +3,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
 */
 /* 
-    Created on : Oct 22, 2023, 10:48:53 PM
+    Created on : Nov 4, 2023, 11:51:58 PM
     Author     : huy08
 */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *{
@@ -128,7 +127,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   .content .tab{
       display: none;
   }
-  
+  li.timetable{
+     background: lightgreen;
+
+      
+  }
   button{
       border: none;
       background: #f1f1f1;

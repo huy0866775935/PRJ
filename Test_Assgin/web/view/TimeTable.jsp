@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Oct 28, 2023, 10:22:48 PM
+    Document   : TimeTable
+    Created on : Nov 4, 2023, 11:48:36 PM
     Author     : huy08
 --%>
 
@@ -13,7 +13,7 @@
         <title>Home</title>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="StyleHome.css" rel="stylesheet" type="text/css"/>
+        <link href="StyleTimeTable.css" rel="stylesheet" type="text/css"/>
         
         
     </head>
@@ -42,11 +42,12 @@
                     <a href=""><ion-icon name="log-out"></ion-icon>Log-out</a>
                 </li>
                                
+                               
             </ul>
         </nav>
         <section class="content" >
             
-                <h2>Content Home</h2>           
+                <h2>Content TT</h2>           
         </section>
         
         
@@ -68,8 +69,3 @@
         
     </script>
 
-
-        
-    
-
-</html>

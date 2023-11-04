@@ -68,7 +68,7 @@ public class LoginController extends HttpServlet {
                 response.addCookie(c_user);
                 response.addCookie(c_pass);
             }
-            response.getWriter().println("Hello " + loggedUser.getDisplayname());
+            response.sendRedirect("view/home.jsp");
         } else {
             response.getWriter().println("invalid username or password!");
         }
